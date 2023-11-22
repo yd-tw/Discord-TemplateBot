@@ -1,45 +1,53 @@
-# 導入Discord.py模組
 import discord
-# 導入commands指令模組
 from discord.ext import commands
+from discord.utils import get
 
 # intents是要求機器人的權限
 intents = discord.Intents.all()
-# command_prefix是前綴符號，可以自由選擇($, #, &...)
+# command_prefix是前綴符號，可以自由選擇
 bot = commands.Bot(command_prefix = "%", intents = intents)
 
-@bot.event
-# 當機器人完成啟動
+
+#當機器人完成啟動
+@bot.event 
 async def on_ready():
     print(f"目前登入身份 --> {bot.user}")
 
-@bot.command()
 # 輸入%Hello呼叫指令
 async def Hello(ctx):
-    # 回覆Hello, world!
     await ctx.send("Hello, world!")
 
+# 加入語音頻道的命令
 @bot.command()
 async def join(ctx):
-    # 獲取語音頻道
     channel = ctx.author.voice.channel
-
-    # 如果機器人已經在語音頻道中，則不執行任何操作
-    if ctx.voice_client is not None:
-        return await ctx.voice_client.move_to(channel)
-
-    # 加入語音頻道
     await channel.connect()
     await ctx.send(f'加入了語音頻道 {channel}')
 
+# 播放本地音频文件的命令
+@bot.command()
+async def play(ctx, file_name):
+    voice_channel = get(bot.voice_clients, guild=ctx.guild)
+    
+    if not voice_channel.is_playing():
+        audio_source = discord.FFmpegPCMAudio(file_name)
+        voice_channel.play(audio_source)
+    else:
+        await ctx.send("音频正在播放")
+
+# 停止播放的命令
+@bot.command()
+async def stop(ctx):
+    voice_channel = get(bot.voice_clients, guild=ctx.guild)
+    
+    if voice_channel.is_playing():
+        voice_channel.stop()
+
+# 断开连接的命令
 @bot.command()
 async def leave(ctx):
-    # 如果機器人不在語音頻道中，則不執行任何操作
-    if ctx.voice_client is None:
-        return await ctx.send('我不在任何語音頻道中。')
-
-    # 離開語音頻道
     await ctx.voice_client.disconnect()
     await ctx.send('離開了語音頻道。')
 
+# 运行Bot
 bot.run("MTE0NTE4Nzc4MDM2NDg2OTY1MQ.GSiJ3A.QjB2Koi73L5YLCUOCun3fvejiUk-mK5bnM42uM")
