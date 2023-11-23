@@ -47,6 +47,11 @@ async def version(ctx):
 async def invite(ctx):
     print("invite")
     await generally.invite(ctx)
+#取得延遲
+@bot.command()
+async def ping(ctx):
+    latency = bot.latency * 1000  # 將延遲轉換為毫秒
+    await ctx.send(f'Pong! 延遲為 {latency:.2f} 毫秒')
 
 
 #加入語音
@@ -88,7 +93,7 @@ async def settime(ctx, time):
 #遊戲
 @bot.command()
 async def QA(ctx, text):
-    print("settime")
+    print("QA")
     await playgame.QA(ctx, text)
 
 bot.run(TOKEN)
