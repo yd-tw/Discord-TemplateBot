@@ -33,14 +33,9 @@ async def help(ctx, argument=None):
 
 #複述對話
 @bot.command()
-async def say(ctx, text):
+async def say(ctx, text, times: int = 1):
     print("say")
-    await generally.say(ctx,text)
-#測試機器
-@bot.command()
-async def testbot(ctx):
-    print("testbot")
-    await generally.testbot(ctx)
+    await generally.say(ctx,text,times)
 #版本查詢
 @bot.command()
 async def version(ctx):

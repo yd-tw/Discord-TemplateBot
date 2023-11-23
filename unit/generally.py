@@ -1,8 +1,6 @@
-async def say(ctx, text):
-    await ctx.send(text)
-
-async def testbot(ctx):
-    print(ctx)
+async def say(ctx, text, times):
+    for _ in range(times):
+        await ctx.send(text)
 
 async def version(ctx,VERSION):
     await ctx.send("當前版本:" + VERSION)
