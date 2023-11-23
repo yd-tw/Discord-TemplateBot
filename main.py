@@ -33,14 +33,14 @@ async def help(ctx, argument=None):
 
 #複述對話
 @bot.command()
-async def say(ctx, text, times: int = 1):
+async def say(ctx, text, times: int = 1, delay: int = 0):
     print("say")
-    await generally.say(ctx,text,times)
+    await generally.say(ctx, text, times, delay)
 #版本查詢
 @bot.command()
 async def version(ctx):
     print("version")
-    await generally.version(ctx,VERSION)
+    await generally.version(ctx, VERSION)
 #邀請連結
 @bot.command()
 async def invite(ctx):

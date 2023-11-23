@@ -1,8 +1,12 @@
-async def say(ctx, text, times):
-    if times > 10:
+import asyncio
+
+async def say(ctx, text, times, delay):
+    if times > 100:
+        await ctx.send("到底是誰同意你輸入這麼大的數字?")
         return
-    for i in range(times):
+    for _ in range(times):
         await ctx.send(text)
+        await asyncio.sleep(delay)
 
 async def version(ctx,VERSION):
     await ctx.send("當前版本:" + VERSION)
