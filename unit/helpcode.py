@@ -25,7 +25,7 @@ async def help(ctx,START):
         "設定鬧鐘": f"設定鬧鐘:\
         \n```設定鬧鐘 {START}alert(Year/Mon/Dat-H:M:S\)```",
         "小小遊戲": f"小小遊戲:\
-        \n```機率 {START}%(一個問題)"
+        \n```機率 {START}QA(一個問題)"
     }
 
     view = discord.ui.View()

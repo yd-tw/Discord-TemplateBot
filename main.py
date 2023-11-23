@@ -8,6 +8,7 @@ from unit import generally
 from unit import voice
 from unit import music
 from unit import alert
+from unit import playgame
 
 load_dotenv()
 TOKEN = os.getenv("Token")
@@ -82,5 +83,12 @@ async def stop(ctx):
 async def settime(ctx, time):
     print("settime")
     await alert.settime(ctx, time)
+
+
+#遊戲
+@bot.command()
+async def QA(ctx, text):
+    print("settime")
+    await playgame.QA(ctx, text)
 
 bot.run(TOKEN)
