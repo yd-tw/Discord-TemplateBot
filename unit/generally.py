@@ -1,5 +1,7 @@
 async def say(ctx, text, times):
-    for _ in range(times):
+    if times > 10:
+        return
+    for i in range(times):
         await ctx.send(text)
 
 async def version(ctx,VERSION):
