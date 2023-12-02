@@ -1,14 +1,9 @@
+import os
 import discord
 from discord.ext import commands
-import os
 from dotenv import load_dotenv
 
-from unit import helpcode
-from unit import generally
-from unit import voice
-from unit import music
-from unit import alert
-from unit import playgame
+from unit import *
 
 load_dotenv()
 TOKEN = os.getenv("Token")
