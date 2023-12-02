@@ -45,8 +45,7 @@ async def invite(ctx):
 #取得延遲
 @bot.command()
 async def ping(ctx):
-    latency = bot.latency * 1000  # 將延遲轉換為毫秒
-    await ctx.send(f'Pong! 延遲為 {latency:.2f} 毫秒')
+    await _talk.ping(ctx, bot)
 
 
 #加入語音
