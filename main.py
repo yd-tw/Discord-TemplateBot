@@ -24,24 +24,24 @@ async def on_ready():
 @bot.command()
 async def help(ctx, argument=None):
     print("help")
-    await helpcode.help(ctx,START)
+    await _help.help(ctx,START)
 
 
 #複述對話
 @bot.command()
 async def say(ctx, text, times: int = 1, delay: int = 0):
     print("say")
-    await generally.say(ctx, text, times, delay)
+    await _talk.say(ctx, text, times, delay)
 #版本查詢
 @bot.command()
 async def version(ctx):
     print("version")
-    await generally.version(ctx, VERSION)
+    await _talk.version(ctx, VERSION)
 #邀請連結
 @bot.command()
 async def invite(ctx):
     print("invite")
-    await generally.invite(ctx)
+    await _talk.invite(ctx)
 #取得延遲
 @bot.command()
 async def ping(ctx):
@@ -53,42 +53,42 @@ async def ping(ctx):
 @bot.command()
 async def join(ctx):
     print("join")
-    await voice.join(ctx)
+    await _voice.join(ctx)
 #離開語音
 @bot.command()
 async def leave(ctx):
     print("leave")
-    await voice.leave(ctx)
+    await _voice.leave(ctx)
 
 
 #音樂列表
 @bot.command()
 async def list(ctx):
     print("list")
-    await music.list(ctx)
+    await _music.list(ctx)
 #播放本地音樂
 @bot.command()
 async def play(ctx, file_name):
     print("play")
-    await music.play(ctx, file_name, bot, START)
+    await _music.play(ctx, file_name, bot, START)
 #停止播放音樂
 @bot.command()
 async def stop(ctx):
     print("stop")
-    await music.stop(ctx, bot)
+    await _music.stop(ctx, bot)
 
 
 #設定鬧鐘
 @bot.command()
 async def settime(ctx, time):
     print("settime")
-    await alert.settime(ctx, time)
+    await _alert.settime(ctx, time)
 
 
 #遊戲
 @bot.command()
 async def QA(ctx, text):
     print("QA")
-    await playgame.QA(ctx, text)
+    await _game.QA(ctx, text)
 
 bot.run(TOKEN)
