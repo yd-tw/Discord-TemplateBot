@@ -6,9 +6,12 @@ from dotenv import load_dotenv
 from unit import *
 
 load_dotenv()
+START = os.getenv("Start")
 TOKEN = os.getenv("Token")
+
 VERSION = os.getenv("Version")
-START = "%"
+
+MUSICPATH = os.getenv("MusicPath")
 
 # intents是要求機器人的權限、command_prefix是前綴符號
 bot = commands.Bot(command_prefix = {START}, intents = discord.Intents.all())
@@ -67,9 +70,9 @@ async def list(ctx):
     await _music.list(ctx)
 #播放本地音樂
 @bot.command()
-async def play(ctx, file_name):
+async def play(ctx, file):
     print("play")
-    await _music.play(ctx, file_name, bot, START)
+    await _music.play(ctx, file, bot, START, MUSICPATH)
 #停止播放音樂
 @bot.command()
 async def stop(ctx):

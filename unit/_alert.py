@@ -1,11 +1,9 @@
 import asyncio
 from datetime import datetime
 
-bell = "./music/01.mp3"
-
 async def settime(ctx, time):
     try:
-        alarm_time = datetime.strptime(time, '%Y/%m/%d-%H:%M:%S')
+        alarm_time = datetime.strptime(time, "%Y/%m/%d-%H:%M:%S")
         seconds_until_alarm = (alarm_time - datetime.now()).total_seconds()
 
         if seconds_until_alarm > 0:
