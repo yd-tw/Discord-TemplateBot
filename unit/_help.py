@@ -36,4 +36,4 @@ async def help(ctx,START):
 
     select.callback = select_callback
     view.add_item(select)
-    await ctx.send("點擊選單，查找你想要的指令~", view=view)
+    await ctx.respond("點擊選單，查找你想要的指令~", view=view)
