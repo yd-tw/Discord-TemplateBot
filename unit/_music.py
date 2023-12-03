@@ -8,17 +8,23 @@ async def musicfile(ctx):
     sendList = "音樂曲目列表:\n"
     for name in fileList:
         sendList = sendList + name[:-4] + "\n"
-    await ctx.respond(sendList)
+    await ctx.respond(embed=discord.Embed(
+        description= sendList,
+        color= discord.Colour.random(),
+    ))
 
 #播放本地音樂
 async def musicplay(ctx, file, bot, MUSICPATH):
     voice_channel = get(bot.voice_clients, guild=ctx.guild)
     
     if voice_channel.is_playing():
-        await ctx.respond(f"音频正在播放，請先使用/stop停止")
-    else:
-        voice_channel.play(discord.FFmpegPCMAudio("./" + MUSICPATH + file + ".mp3"))
-        await ctx.respond(f"正在播放{file}")
+        voice_channel.stop()
+    
+    voice_channel.play(discord.FFmpegPCMAudio("./" + MUSICPATH + file + ".mp3"))
+    await ctx.respond(embed=discord.Embed(
+        description= f"正在播放{file}",
+        color= discord.Colour.random(),
+    ))
 
 #停止播放音樂
 async def stop(ctx, bot):
@@ -26,3 +32,8 @@ async def stop(ctx, bot):
     
     if voice_channel.is_playing():
         voice_channel.stop()
+
+    await ctx.respond(embed=discord.Embed(
+        description= f"已終止所有播放",
+        color= discord.Colour.random(),
+    ))
