@@ -24,19 +24,6 @@ bot.help_command = None
 async def on_ready():
     print(f"已成功登入:{bot.user}")
 
-# @bot.event
-# async def on_message(message):
-#     await bot.process_commands(message)
-
-#     if str(message.content)[0]==START:
-#         log.info(f"{message.guild},{message.channel},{message.author},{message.content}")
-#     else:
-#         log.debug(f"{message.guild},{message.channel},{message.author},{message.content}")
-
-@bot.event
-async def on_command_error(ctx,error):
-    log.warning(f"{ctx.guild},{ctx.channel},{ctx.author},: {error}")
-
 #指令查詢
 @bot.command()
 async def help(ctx, argument=None):
