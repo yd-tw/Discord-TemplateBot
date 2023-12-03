@@ -3,7 +3,7 @@ import discord
 from discord.utils import get
 
 #音樂列表
-async def list(ctx):
+async def musicfile(ctx):
     fileList = os.listdir("./data/music/")
     sendList = "音樂曲目列表:\n"
     for name in fileList:
@@ -11,7 +11,7 @@ async def list(ctx):
     await ctx.respond(sendList)
 
 #播放本地音樂
-async def play(ctx, file, bot, MUSICPATH):
+async def musicplay(ctx, file, bot, MUSICPATH):
     voice_channel = get(bot.voice_clients, guild=ctx.guild)
     
     if voice_channel.is_playing():
