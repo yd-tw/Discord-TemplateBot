@@ -1,6 +1,6 @@
 import discord
 
-async def help(ctx,START):
+async def help(ctx):
     options = [
         discord.SelectOption(label="基礎指令", emoji="👌", description="邀請連結、學說話、機器人資訊等......"),
         discord.SelectOption(label="語音頻道", emoji="✨", description="加入、離開語音頻道"),
@@ -11,21 +11,21 @@ async def help(ctx,START):
 
     text = {
         "基礎指令": f"基礎指令:\
-        \n```學你說話 {START}say(要說的話,次數,間隔秒數)```\
-        \n```邀請機器人 {START}invite```\
-        \n```查詢延遲 {START}ping```\
-        \n```機器人版本 {START}version```",
+        \n```學你說話 /say(要說的話,次數,間隔秒數)```\
+        \n```邀請機器人 /invite```\
+        \n```查詢延遲 /ping```\
+        \n```機器人版本 /version```",
         "語音頻道": f"語音頻道:\
-        \n```加入語音 {START}join```\
-        \n```離開語音 {START}leave```",
+        \n```加入語音 /join```\
+        \n```離開語音 /leave```",
         "播放音樂": f"播放音樂:\
-        \n```音樂列表 {START}music```\
-        \n```播放音樂 {START}play(主檔名)\
-        \n停止播放 {START}stop```",
+        \n```音樂列表 /music```\
+        \n```播放音樂 /play(主檔名)\
+        \n停止播放 /stop```",
         "設定鬧鐘": f"設定鬧鐘:\
-        \n```設定鬧鐘 {START}alert(Year/Mon/Dat-H:M:S\)```",
+        \n```設定鬧鐘 /alert(Year/Mon/Dat-H:M:S\)```",
         "小小遊戲": f"小小遊戲:\
-        \n```機率 {START}QA(一個問題)"
+        \n```機率 /QA(一個問題)"
     }
 
     view = discord.ui.View()

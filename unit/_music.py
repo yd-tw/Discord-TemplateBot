@@ -11,11 +11,11 @@ async def list(ctx):
     await ctx.respond(sendList)
 
 #播放本地音樂
-async def play(ctx, file, bot, START, MUSICPATH):
+async def play(ctx, file, bot, MUSICPATH):
     voice_channel = get(bot.voice_clients, guild=ctx.guild)
     
     if voice_channel.is_playing():
-        await ctx.respond(f"音频正在播放，請先使用{START}stop停止")
+        await ctx.respond(f"音频正在播放，請先使用/stop停止")
     else:
         voice_channel.play(discord.FFmpegPCMAudio("./" + MUSICPATH + file + ".mp3"))
         await ctx.respond(f"正在播放{file}")

@@ -9,8 +9,8 @@ async def say(ctx, text, times, delay):
             await ctx.send(text)
             await asyncio.sleep(delay)
 
-async def version(ctx,VERSION):
-    await ctx.respond("當前版本:" + VERSION)
+async def version(ctx, VERSION):
+    await ctx.respond(f"當前版本: {VERSION}")
 
 async def invite(ctx):
     await ctx.respond("邀我到其他伺服器!!!\nhttps://discord.com/oauth2/authorize?client_id=1145187780364869651&permissions=0&scope=bot")
