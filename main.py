@@ -13,7 +13,7 @@ MUSICPATH = os.getenv("MusicPath")
 FORMAT = '%(asctime)s %(levelname)s: %(message)s'
 log.basicConfig(level=log.DEBUG, filename='.log', filemode='a', format=FORMAT, encoding='utf-8')
 
-# intents是要求機器人的權限、command_prefix是前綴符號
+# intents是要求機器人的權限
 intents = discord.Intents.all()
 bot = discord.Bot(intents=intents)
 
