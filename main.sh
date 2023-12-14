@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo "正在載入虛擬環境..."
 source venv/bin/activate
+echo "已虛擬環境"
 
-echo "啟動主程式..."
 python main.py &
+echo "已啟動main.py"
 
-echo "啟動完成"
+echo "腳本執行完成"
