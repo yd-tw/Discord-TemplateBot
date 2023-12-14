@@ -11,6 +11,3 @@ echo 已啟動虛擬環境
 
 pip install -r requirements.txt
 echo 已安裝依賴環境
-
-REM 在 macOS/Linux 上：
-REM call myenv\Scripts\activate
