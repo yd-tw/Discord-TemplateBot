@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source venv/bin/activate
-echo "已虛擬環境"
+echo "已啟動虛擬環境"
 
 python main.py &
 echo "已啟動main.py"
