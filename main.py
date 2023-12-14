@@ -3,7 +3,7 @@ import logging as log
 import discord
 from dotenv import load_dotenv
 
-from unit import *
+from src import *
 
 load_dotenv()
 TOKEN = os.getenv("Token")
