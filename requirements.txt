@@ -1,2 +1,2 @@
-py-cord[voice] == 2.4.1
+discord.py == 2.3.2
 python-dotenv == 1.0.0
