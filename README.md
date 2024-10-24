@@ -1,7 +1,7 @@
 <div align="center">
   <a href="/">
     <picture>
-      <img alt="logo" src="./data/image/logo.jpg" height="64">
+      <img alt="logo" src="./image/logo.jpg" height="64">
     </picture>
   </a>
   <h1>Discord-TemplateBot</h1>
