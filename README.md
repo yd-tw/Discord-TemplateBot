@@ -1,13 +1,13 @@
 <div align="center">
-  <a href="https://www.kuang-ti.com">
+  <a href="/">
     <picture>
-      <img alt="Next.js logo" src="https://www.kuang-ti.com/images/YD-logo.svg" height="64">
+      <img alt="logo" src="./data/image/logo.jpg" height="64">
     </picture>
   </a>
   <h1>Discord-TemplateBot</h1>
 
 <a href="https://github.com/yd-tw/kuang-ti-web/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/badge/license-MIT-green"></a>
-<a href="https://github.com/yd-tw/kuang-ti-web/blob/main/package.json"><img alt="version" src="https://img.shields.io/badge/Discord.py-2.3-blue"></a>
+<a href="https://github.com/yd-tw/Discord-TemplateBot/blob/main/requirements.txt"><img alt="version" src="https://img.shields.io/badge/Discord.py-2.3-blue"></a>
 
 </div>
 
@@ -39,7 +39,3 @@
 1. clone這個儲存庫
 2. 更換自己的DC token
 2. 運行程式
-
-## 注意事項
-
-文件尚未編輯完畢，仍有部分資訊尚未添加完善。歡迎回報問題。
