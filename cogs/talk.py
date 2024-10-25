@@ -37,7 +37,7 @@ class Main(commands.Cog):
         interaction: discord.Interaction, 
     ):
         await interaction.response.send_message(embed=discord.Embed(
-            description= f"當前版本: 0",
+            description= f"當前版本: 1.4.0",
             color= discord.Colour.random(),
         ))
 
