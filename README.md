@@ -1,7 +1,7 @@
 <div align="center">
   <a href="/">
     <picture>
-      <img alt="logo" src="./image/logo.jpg" height="64">
+      <img alt="logo" src="./logo.jpg" height="64">
     </picture>
   </a>
   <h1>Discord-TemplateBot</h1>
@@ -32,7 +32,7 @@
 
 - 初代設計 提供一個通用模板
 - 重構設計 提供各種模板供選擇
-- 目前版本 1.3
+- 目前版本 1.4.0
 
 ## 使用方法
 
