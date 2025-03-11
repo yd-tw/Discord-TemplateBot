@@ -4,6 +4,7 @@
 # 環境變數
 *venv/
 *.env
+*.env.local
 
 # 日誌檔案
 *.log
